@@ -1,0 +1,21 @@
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^$ index.php [NC,L]
+RewriteRule ^([a-z,0-9]*)/?$ index.php?act=$1 [L,QSA]
+#RewriteRule ^([^/]*)$ index.php?act=$1 [NC,L]
+
+
+
+Options +MultiViews
+# Основной домен
+#RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+#RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+#ErrorDocument 401 https://progs.uz/404
+#ErrorDocument 403 https://progs.uz/404
+#ErrorDocument 404 https://progs.uz/404
+#ErrorDocument 500 https://progs.uz/404
+
+#Options +FollowSymLinks
+#RewriteCond %{QUERY_STRING} ^id=7$ [NC]
+#RewriteRule ^period/$ http://progs.uz/ [L,R=301]
